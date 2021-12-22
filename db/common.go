@@ -7,11 +7,11 @@ import (
 )
 
 const (
-	DB_HOST			= "191.168.1.141"
-	DB_PORT			= 5432
+	DB_HOST			= "localhost"
+	DB_PORT			= 5534
 	DB_USER     = "postgres"
 	DB_PASSWORD = "glowglow"
-	DB_NAME     = "template1"
+	DB_NAME     = "wang"
 )
 
 // Function for handling errors

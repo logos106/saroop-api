@@ -30,4 +30,10 @@ var routes = Routes{
 		"/admin/{id}",
 		handler.GetAdmin,
 	},
+	Route{
+		"GetAdmin",
+		"POST",
+		"/admin",
+		handler.SetAdmin,
+	},
 }

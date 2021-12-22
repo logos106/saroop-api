@@ -7,7 +7,6 @@ type Admin struct {
 	Password string `json:"password,omitempty"`
 	Role string `json:"role,omitempty"`
 	Status string `json:"status,omitempty"`
-
 }
 
 // Address description
