@@ -36,4 +36,10 @@ var routes = Routes{
 		"/admin",
 		handler.SetAdmin,
 	},
+	Route{
+		"GetAdmin",
+		"DELETE",
+		"/admin",
+		handler.SetAdmin,
+	},
 }

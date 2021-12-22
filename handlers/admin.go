@@ -12,29 +12,8 @@ import (
 	model "example.com/logos106/saroop-api/models"
 )
 
-// IDParam is used to identify a person
-//
-// swagger:parameters listPerson
-type IDParam struct {
-	// The ID of a person
-	//
-	// in: path
-	// required: true
-	ID int64 `json:"id"`
-}
-
 // SetAdmin is an httpHandler for route POST /admin
 func SetAdmin(w http.ResponseWriter, r *http.Request) {
-	// Get parameters
-	// id := r.FormValue("id")
-  // name := r.FormValue("name")
-  // domain := r.FormValue("domain")
-  // pass := r.FormValue("password")
-  // role := r.FormValue("role")
-  // status := r.FormValue("status")
-	//
-	// admin = Admin(ID: id, Name: name, Domain: domain, Password: pass, Role: role, Status: status)
-
 	var admin model.Admin
 	err := decodeJSONBody(w, r, &admin)
 	fmt.Printf("%+v\n", admin)
@@ -74,4 +53,12 @@ func GetAdmin(w http.ResponseWriter, r *http.Request) {
 	if err := json.NewEncoder(w).Encode(jsonError{Message: "Not Found"}); err != nil {
 		panic(err)
 	}
+}
+
+// SetAdmin is an httpHandler for route POST /admin
+func DelAdmin(w http.ResponseWriter, r *http.Request) {
+
+	w.Header().Set("Content-Type", "application/json; charset=UTF-8")
+	w.WriteHeader(http.StatusOK)
+	// json.NewEncoder(w).Encode(db.DeleteAdmin(admin))
 }
