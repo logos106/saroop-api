@@ -1,6 +1,7 @@
 package db
 
 import (
+	"database/sql"
 	model "example.com/logos106/saroop-api/models"
 )
 
@@ -13,5 +14,8 @@ func Insert(person model.Admin) {
 
 // Get returns the whole database
 func Get() []model.Admin {
+	db := setupDB
+	checkErr(err)
+
 	return admin
 }
